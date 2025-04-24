@@ -27,6 +27,12 @@
         Managemen Data
     </div>
 
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href=" {{ route('registrations.index') }} ">
+            <i class="fas fa-fw fa-registrations"></i>
+            <span>Pendaftaran </span></a>
+    </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
