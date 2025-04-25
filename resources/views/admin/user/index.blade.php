@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 @section('content')
     <a href="{{  route('users.create') }}" class="btn btn-sm btn-success mb-3">Tambah Pengguna</a>
     <div class="card shadow mb-4">
