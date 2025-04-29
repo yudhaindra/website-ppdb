@@ -35,6 +35,8 @@
                                     @MEthod('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this registration?')">Delete</button>
                                 </form>
+                                <a href="{{ route('registrations.show', ['id' => $registration->id]) }}"
+                                    class="btn btn-sm btn-info btn-outline">Lihat Pendaftar</a>
                             </td>
                         </tr> 
                         @endforeach

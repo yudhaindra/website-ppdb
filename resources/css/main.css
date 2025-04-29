@@ -837,7 +837,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 260px 0;
   scroll-margin-top: 112px;
   overflow: clip;
 }
@@ -2848,4 +2848,33 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+section.section.registration {
+  width: 40%;
+  margin: 0 auto;
+}
+
+@MEdia (max-width: 1024px) {
+  section.section.registration {
+    width: 80%;
+  }
+}
+
+@MEdia (max-width: 768px) {
+  section.section.registration {
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
