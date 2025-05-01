@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('content')
-    <a href="{{  route('registrations.create') }}" class="btn btn-sm btn-success mb-3">Tambah Pengguna</a>
+    <a href="{{  route('registrations.create') }}" class="btn btn-sm btn-success mb-3">Tambah Pendaftaran</a>
     <div class="card shadow mb-4">  
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Pendaftaran</h6>
