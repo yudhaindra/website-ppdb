@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArchivedRegistrationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -14,10 +15,10 @@ Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login',[LoginController::class,'login'])->name('login.handle');
 
 
-
 Route::get('/pendaftaran/{slug}', [HomeController::class, 'registration'])->name('registration');
 Route::post('/pendaftaran/{slug}', [RegistrationApplicationController::class, 'store'])->name('registration.store');
 Route::get('/pendaftaran-berhasil', [RegistrationApplicationController::class, 'showSuccess'])->name('registration.success');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::post("/logout", [LoginController::class, "logout"])->name('logout');
@@ -46,8 +47,14 @@ Route::middleware(['auth'])->group(function () {
             'destroy' => 'registrations.destroy',
         ]);
 
+    Route::put('/registrations/{id}/archive', [RegistrationController::class, 'archive'])->name('registrations.archive');
+    Route::put('/registrations/{id}/unarchive', [RegistrationController::class, 'unarchive'])->name('registrations.unarchive');
+
     Route::get('/registrations/{id}/applications', [RegistrationController::class, 'showApplication'])->name('registrations.application');
+
+    Route::get('/archived-registrations', [ArchivedRegistrationController::class, 'index'])->name('registrations.archived.index');
 });
+
 
 
 

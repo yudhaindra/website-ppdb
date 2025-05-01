@@ -177,6 +177,14 @@
                             </a>
                         </div>
                         @endif
+                        @if ($application->proof_of_payment_filepath)
+                            <div class="col-md-3 mb-3">
+                                <a href="{{ asset('storage/' . $application->proof_of_payment_filepath) }}"
+                                    class="btn btn-primary w-100" target="_blank">
+                                    <i class="fas fa-file-pdf mr-2"></i> Bukti Pembayaran
+                                </a>
+                            </div>
+                            @endif
                     </div>
                 </div>
             </div>

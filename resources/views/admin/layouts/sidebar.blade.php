@@ -40,6 +40,14 @@
             <i class="fas fa-fw fa-users"></i>
             <span>Pengguna </span></a>
     </li>
+    
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('registrations.archived.index') }}">
+            <i class="fas fa-fw fa-archive"></i>
+            <span>Arsip Pendaftaran</span></a>
+    </li>
+
 
 
     <!-- Sidebar Toggler (Sidebar) -->
