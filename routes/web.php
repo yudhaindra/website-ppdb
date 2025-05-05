@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArchivedRegistrationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
@@ -57,8 +58,17 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
     Route::put('/profile',[ProfileController::class, 'update'])->name('profile.update');
+
+    
 });
 
+Route::middleware('guest')->group(function () {
+    // Password Reset Routes
+    Route::get('/lupa-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('/lupa-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+    Route::get('/tetapkan-ulang-password/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/tetapkan-ulang-password', [ForgotPasswordController::class, 'reset'])->name('password.update');
+});
 
 
 

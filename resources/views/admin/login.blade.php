@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -35,7 +35,9 @@
                     <div class="card-body p-0">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Admin PPDB</h1>
+                                <h1 class="h4 text-gray-900 mb-4 bg-primary rounded py-3">
+                                    <img src="{{ asset('assets/logo.png') }}" alt="Logo">
+                                </h1>
                             </div>
                             <form action="{{ route('login.handle') }}" method="POST" class="user">
                                 @csrf
@@ -63,6 +65,10 @@
                                     Masuk
                                 </button>
                             </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="{{ route('password.request') }}">Lupa Password?</a>
+                            </div>
                         </div>
                     </div>
                 </div>
