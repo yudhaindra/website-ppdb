@@ -9,7 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>{{ config('app.name') }}</title>
+
+    <!-- Favicons -->
+    <link href="{{ asset('assets/small-logo.png') }}" rel="icon">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -19,11 +22,13 @@
 
     <!-- Custom styles for this template-->
     @vite([
-        'resources/css/sb-admin-2.min.css',
-        'resources/js/sb-admin-2.min.js',
-        'resources/js/demo/chart-area-demo.js',
-        'resources/js/demo/chart-pie-demo.js'
+        'resources/js/admin/jquery.min.js',
+        'resources/css/admin/sb-admin-2.min.css',
+        'resources/js/admin/sb-admin-2.min.js',
+        'resources/js/admin/chart.js',
     ])
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> --}}
 
 </head>
 
@@ -61,7 +66,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; EX - RPL 1</span>
+                        <span>{{ config('app.name') }}</span>
                     </div>
                 </div>
             </footer>
@@ -101,22 +106,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+    @stack('scripts')
 
 </body>
 

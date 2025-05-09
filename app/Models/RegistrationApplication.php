@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class RegistrationApplication extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'registration_id',
         'full_name',
         'nisn',
         'gender',
@@ -16,16 +18,17 @@ class RegistrationApplication extends Model
         'religion',
         'full_address',
         'personal_phone_number',
+        'current_domicile',
         'email',
         'father_name',
         'mother_name',
         'parents_last_education',
         'parents_occupation',
+        'parents_occupation_other',
         'parents_address',
         'parents_phone_number',
         'parents_income',
         'previous_school_name',
-        'previous_school_npsn',
         'previous_school_address',
         'school_status',
         'exam_participant_number',
@@ -44,6 +47,6 @@ class RegistrationApplication extends Model
 
     public function registration()
     {
-        return $this->belongsTo(Registration::class, 'registration_id');
+        return $this->belongsTo(Registration::class);
     }
 }

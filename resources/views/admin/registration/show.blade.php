@@ -25,6 +25,10 @@
                                 <td>: {{ $registration->name }}</td>
                             </tr>
                             <tr>
+                                <td>Tahun Ajaran</td>
+                                <td>: {{ $registration->academic_year ?: '-' }}</td>
+                            </tr>
+                            <tr>
                                 <td>Tanggal Mulai</td>
                                 <td>: {{ $registration->start_date->translatedFormat('d F Y') }}</td>
                             </tr>
@@ -36,9 +40,13 @@
                                 <td>Status</td>
                                 <td>
                                     <span>:</span>
-                                    <span class="badge bg-{{ $registration->is_open ? 'success' : 'danger' }} text-white">
-                                        {{ $registration->is_open ? 'Dibuka' : 'Ditutup' }}
-                                    </span>
+                                    @if ($registration->is_archived)
+                                        <span class="badge bg-warning text-white">Diarsipkan</span>
+                                    @elseif ($registration->is_open)
+                                        <span class="badge bg-success text-white">Dibuka</span>
+                                    @else
+                                        <span class="badge bg-danger text-white">Ditutup</span>
+                                    @endif
                                 </td>
                             </tr>
                         </table>
@@ -61,10 +69,8 @@
                         <input type="text" name="cari" class="form-control border-left-0" placeholder="Cari pendaftar..." value="{{ request('search') }}">
                     </div>
                 </form>
-    
             </div>
 
-            
             <!-- Card Body -->
             <div class="card-body">
                 <div class="table-responsive">
@@ -84,7 +90,7 @@
                         <tbody>
                             @forelse ($applications as $index => $application)
                                 <tr>
-                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ ($applications ->currentpage()-1) * $applications ->perpage() + $loop->index + 1 }}</td>
                                     <td>{{ $application->full_name }}</td>
                                     <td>{{ $application->nisn }}</td>
                                     <td>{{ $application->gender }}</td>
@@ -105,6 +111,7 @@
                             @endforelse
                         </tbody>
                     </table>
+                    {{ $applications->links() }}
                 </div>
             </div>
         </div>

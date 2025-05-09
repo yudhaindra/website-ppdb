@@ -8,13 +8,8 @@ use Illuminate\Support\Str;
 
 class Registration extends Model
 {
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
+        'academic_year',
         'name',
         'slug',
         'start_date',
@@ -22,10 +17,12 @@ class Registration extends Model
         'is_open',
         'is_archived'
     ];
+
     protected $casts = [
         'start_date' => 'datetime',
         'end_date' => 'datetime'
     ];
+
     protected static function boot()
     {
         parent::boot();
@@ -36,6 +33,11 @@ class Registration extends Model
 
         static::updating(function ($registration) {
             $registration->slug = Str::slug($registration->name);
+        });
+
+        static::addGlobalScope('orderByNameAndAcademicYear', function (Builder $builder) {
+            $builder->orderBy('academic_year', 'desc')
+               ->orderBy('name', 'asc');
         });
     }
 
