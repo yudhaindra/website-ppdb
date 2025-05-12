@@ -13,11 +13,6 @@
             </ol>
         </nav>
 
-        <div class="d-flex justify-content-end mb-4">
-            <a href="{{ route('registrations.applications.edit', ['id' => $application->id]) }}" class="btn btn-primary">
-                <i class="fas fa-edit mr-2"></i>Edit Data
-            </a>
-        </div>
 
         <div class="row">
             <!-- Personal Information Card -->
@@ -145,6 +140,11 @@
                 <div class="card shadow h-100">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Dokumen</h6>
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="{{ route('registrations.applications.edit', ['id' => $application->id]) }}" class="btn btn-primary">
+                        <i class="fas fa-edit mr-2"></i>Edit Dokumen
+                        </a>
+                    </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
