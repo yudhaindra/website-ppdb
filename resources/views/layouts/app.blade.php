@@ -83,6 +83,11 @@
                                 Biaya Pendidikan
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ request()->routeIs('home') ? '/login' : route('login') . '/login' }}">
+                                Login
+                            </a>
+                        </li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
