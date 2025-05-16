@@ -28,7 +28,8 @@
         'resources/css/admin/sb-admin-2.min.css',
         'resources/js/admin/chart.js',
         'resources/js/admin/jquery.min.js',
-        'resources/js/admin/bootstrap.bundle.min.js'
+        'resources/js/admin/bootstrap.bundle.min.js',
+        'resources/js/admin/app.js'
     ])
 
     <!-- Custom scripts for admin template -->
@@ -132,6 +133,19 @@
 
     @stack('scripts')
 
+     <script>
+        $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+            console.log('Bootstrap dropdown initialized');
+            $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+                $("body").toggleClass("sidebar-toggled");
+                $(".sidebar").toggleClass("toggled");
+                if ($(".sidebar").hasClass("toggled")) {
+                    $('.sidebar .collapse').collapse('hide');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
