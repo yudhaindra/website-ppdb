@@ -41,6 +41,14 @@
             <span>Pengguna</span></a>
     </li>
 
+    <!-- Nav Item - Tables -->
+    <li class="nav-item {{ request()->routeIs('fees.index') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('fees.index') }}">
+            <i class="fas fa-fw fa-money-bill"></i>
+            <span>Biaya Pendaftaran</span></a>
+    </li>
+
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

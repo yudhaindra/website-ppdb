@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArchivedRegistrationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeeController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -58,6 +59,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/fees', [FeeController::class, 'index'])->name('fees.index');
+    Route::post('/fees', [FeeController::class, 'update'])->name('fees.update');
+
 });
 
 Route::middleware('guest')->group(function () {
