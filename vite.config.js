@@ -22,7 +22,6 @@ export default defineConfig({
 
                 // Global JS
                 'resources/js/main.js',
-                'resources/js/bootstrap.js',
 
                 // Admin CSS
                 'resources/css/admin/app.css',
@@ -34,12 +33,6 @@ export default defineConfig({
                 'resources/js/admin/chart.js',
                 'resources/js/admin/jquery.min.js',
                 'resources/js/admin/bootstrap.bundle.min.js',
-
-                // Demo JS
-                'resources/js/chart-area-demo.js',
-                'resources/js/chart-bar-demo.js',
-                'resources/js/chart-pie-demo.js',
-                'resources/js/datatables-demo.js',
             ],
             refresh: true,
         }),
