@@ -101,6 +101,10 @@
         </div>
     </div>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <!-- Custom styles for this template-->
     @vite(['resources/css/admin/sb-admin-2.min.css', 'resources/js/admin/chart.js', 'resources/js/admin/jquery.min.js', 'resources/js/admin/bootstrap.bundle.min.js', 'resources/js/admin/app.js'])
 
