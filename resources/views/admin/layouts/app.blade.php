@@ -23,6 +23,9 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
+    <!-- Custom styles for this template-->
+    @vite(['resources/css/admin/sb-admin-2.min.css', 'resources/js/admin/chart.js', 'resources/js/admin/jquery.min.js', 'resources/js/admin/bootstrap.bundle.min.js', 'resources/js/admin/app.js'])
+
     {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> --}}
 
 </head>
@@ -104,9 +107,6 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <!-- Custom styles for this template-->
-    @vite(['resources/css/admin/sb-admin-2.min.css', 'resources/js/admin/chart.js', 'resources/js/admin/jquery.min.js', 'resources/js/admin/bootstrap.bundle.min.js', 'resources/js/admin/app.js'])
 
     <!-- Custom scripts for admin template -->
     <script>
