@@ -23,36 +23,6 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    @vite([
-        'resources/css/admin/sb-admin-2.min.css',
-        'resources/js/admin/chart.js',
-        'resources/js/admin/jquery.min.js',
-        'resources/js/admin/bootstrap.bundle.min.js',
-        'resources/js/admin/app.js'
-    ])
-
-    <!-- Custom scripts for admin template -->
-    <script>
-        // Ensure dropdown functionality is working
-        $(document).ready(function() {
-            // Initialize all dropdowns
-            $('.dropdown-toggle').dropdown();
-
-            // Debug logging
-            console.log('Bootstrap dropdown initialized');
-
-            // SB Admin 2 sidebar toggle functionality
-            $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
-                $("body").toggleClass("sidebar-toggled");
-                $(".sidebar").toggleClass("toggled");
-                if ($(".sidebar").hasClass("toggled")) {
-                    $('.sidebar .collapse').collapse('hide');
-                }
-            });
-        });
-    </script>
-
     {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> --}}
 
 </head>
@@ -131,9 +101,37 @@
         </div>
     </div>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template-->
+    @vite(['resources/css/admin/sb-admin-2.min.css', 'resources/js/admin/chart.js', 'resources/js/admin/jquery.min.js', 'resources/js/admin/bootstrap.bundle.min.js', 'resources/js/admin/app.js'])
+
+    <!-- Custom scripts for admin template -->
+    <script>
+        // Ensure dropdown functionality is working
+        $(document).ready(function() {
+            // Initialize all dropdowns
+            $('.dropdown-toggle').dropdown();
+
+            // Debug logging
+            console.log('Bootstrap dropdown initialized');
+
+            // SB Admin 2 sidebar toggle functionality
+            $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+                $("body").toggleClass("sidebar-toggled");
+                $(".sidebar").toggleClass("toggled");
+                if ($(".sidebar").hasClass("toggled")) {
+                    $('.sidebar .collapse').collapse('hide');
+                }
+            });
+        });
+    </script>
+
     @stack('scripts')
 
-     <script>
+    <script>
         $(document).ready(function() {
             $('.dropdown-toggle').dropdown();
             console.log('Bootstrap dropdown initialized');
