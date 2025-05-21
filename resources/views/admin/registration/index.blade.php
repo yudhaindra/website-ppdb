@@ -39,22 +39,26 @@
                                 </td>
                                 <td>{{ $registration->created_at->translatedFormat('l, d F Y H:i') }}</td>
                                 <td class="d-inline-flex flex-column" style="width: 200px;">
-                                    <a href="{{ route('registrations.edit', ['id' => $registration->id]) }}"
-                                        class="btn btn-sm btn-primary mb-2">Edit</a>
+                                    <div>
+                                        <a href="{{ route('registrations.edit', ['id' => $registration->id]) }}"
+                                            class="btn btn-sm btn-primary w-100 mb-2">Edit</a>
+                                    </div>
                                     <form action="{{ route('registrations.destroy', ['id' => $registration->id]) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger mb-2"
+                                        <button type="submit" class="btn btn-sm btn-danger w-100 mb-2"
                                             onclick="return confirm('Apakah anda yakin ingin menghapus pendaftaran ini?')">Hapus</button>
                                     </form>
-                                    <a href="{{ route('registrations.show', ['id' => $registration->id]) }}"
-                                        class="btn btn-sm btn-info btn-outline mb-2">Lihat Pendaftar</a>
+                                    <div>
+                                        <a href="{{ route('registrations.show', ['id' => $registration->id]) }}"
+                                            class="btn btn-sm btn-info w-100 mb-2">Lihat Pendaftar</a>
+                                    </div>
                                     <form action="{{ route('registrations.archive', ['id' => $registration->id]) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="btn btn-sm btn-warning"
+                                        <button type="submit" class="btn btn-sm btn-warning w-100"
                                             onclick="return confirm('Apakah anda yakin ingin mengarsip pendafataran ini?')">Arsipkan</button>
                                     </form>
                                 </td>

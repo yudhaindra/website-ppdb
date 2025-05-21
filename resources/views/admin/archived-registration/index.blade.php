@@ -51,24 +51,30 @@
                                 </td>
                                 <td>{{ $registration->created_at->translatedFormat('l, d F Y H:i') }}</td>
                                 <td class="d-inline-flex flex-column" style="width: 200px;">
-                                    <a href="{{ route('registrations.edit', ['id' => $registration->id]) }}"
-                                        class="btn btn-sm btn-primary mb-2">Edit</a>
+                                     <a href="{{ route('registrations.edit', ['id' => $registration->id]) }}"
+                                        class="btn btn-sm btn-primary w-100 mb-2">Edit</a>
+
                                     <form action="{{ route('registrations.destroy', ['id' => $registration->id]) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger mb-2"
-                                            onclick="return confirm('Apakah anda yakin ingin menghapus pendaftaran ini?')">Hapus</button>
+                                        <button type="submit" class="btn btn-sm btn-danger w-100 mb-2"
+                                            onclick="return confirm('Apakah anda yakin ingin menghapus pendaftaran ini?')">
+                                            Hapus
+                                        </button>
                                     </form>
+
                                     <a href="{{ route('registrations.show', ['id' => $registration->id]) }}"
-                                        class="btn btn-sm btn-info btn-outline mb-2">Lihat Pendaftar</a>
+                                        class="btn btn-sm btn-info w-100 mb-2">Lihat Pendaftar</a>
+
                                     <form action="{{ route('registrations.unarchive', ['id' => $registration->id]) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="btn btn-sm btn-warning"
-                                            onclick="return confirm('Apakah anda yakin ingin keluarkan pendaftaran ini dari arsip?')">Batalkan
-                                            Arsip</button>
+                                        <button type="submit" class="btn btn-sm btn-warning w-100"
+                                            onclick="return confirm('Apakah anda yakin ingin keluarkan pendaftaran ini dari arsip?')">
+                                            Batalkan Arsip
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
