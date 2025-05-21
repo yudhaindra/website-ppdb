@@ -6,6 +6,13 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                // Admin JS
+                'resources/js/admin/app.js',
+                'resources/js/admin/sb-admin-2.min.js',
+                'resources/js/admin/chart.js',
+                'resources/js/admin/jquery.min.js',
+                'resources/js/admin/bootstrap.bundle.min.js',
+                
                 // Global CSS
                 'resources/css/main.css',
                 'resources/css/base.css',
@@ -26,13 +33,6 @@ export default defineConfig({
                 // Admin CSS
                 'resources/css/admin/app.css',
                 'resources/css/admin/sb-admin-2.min.css',
-
-                // Admin JS
-                'resources/js/admin/app.js',
-                'resources/js/admin/sb-admin-2.min.js',
-                'resources/js/admin/chart.js',
-                'resources/js/admin/jquery.min.js',
-                'resources/js/admin/bootstrap.bundle.min.js',
             ],
             refresh: true,
         }),

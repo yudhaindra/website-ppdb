@@ -26,7 +26,8 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        Paginator::useBootstrapFive();
+        Paginator::defaultView('vendor.pagination.bootstrap-responsive');
+        Paginator::useBootstrap();
         // Ambil data pendaftaran untuk ditampilkan di navbar
         view()->composer('layouts.app', function ($view) {
             $registrations = Registration::open()->get();;

@@ -51,7 +51,7 @@ class UserController extends Controller
 
         User::create($validatedData);
 
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        return redirect()->route('users.index')->with('success', 'Pengguna berhasil dibuat.');
     }
 
     /**
@@ -92,7 +92,7 @@ class UserController extends Controller
 
         $user->update($validatedData);
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        return redirect()->route('users.index')->with('success', 'Data Pengguna berhasil diperbarui.');
     }
 
     /**
@@ -100,10 +100,18 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = User::findOrFail($id);
-        $user->delete();
+        $user = User::where('id', $id)->first();
 
-        return redirect()->route('users.index')
-        ->with('success', 'User deleted successfully.');
+        if ($user) {
+            $user->delete();
+
+            return redirect()
+                ->route('users.index')
+                ->with('success', 'User berhasil dihapus.');
+        }
+
+        return redirect()
+            ->route('users.index')
+            ->with('error', 'Data tidak berhasil dihapus.');
     }
 }

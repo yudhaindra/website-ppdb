@@ -212,12 +212,22 @@ class RegistrationController extends Controller
      */
     public function destroy(string $id)
     {
-        $registration = Registration::findOrFail($id);
-        $registration->delete();
+        // $registration = Registration::findOrFail($id);
+        // $registration->delete();
+
+        $registration = Registration::where('id', $id)->first();
+
+        if ($registration) {
+            $registration->delete();
+
+            return redirect()
+                ->route('registrations.index')
+                ->with('success', 'Pendaftaran berhasil dihapus.');
+        }
 
         return redirect()
             ->route('registrations.index')
-            ->with('success', 'Pendaftaran berhasil dihapus.');
+            ->with('error', 'Data tidak berhasil dihapus.');
     }
 
     public function archive(string $id)
