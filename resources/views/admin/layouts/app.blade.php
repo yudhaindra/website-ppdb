@@ -25,16 +25,19 @@
 
    
         <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom styles/scripts via Vite -->
+    <!-- Custom styles/scripts via Vite --> --}}
+    <!-- Custom styles for this template-->
     @vite([
         'resources/css/admin/sb-admin-2.min.css',
         'resources/css/admin/app.css',
         'resources/js/admin/chart.js',
+        'resources/js/admin/jquery.min.js',
+        'resources/js/admin/bootstrap.bundle.min.js',
         'resources/js/admin/sb-admin-2.min.js'
     ])
 
